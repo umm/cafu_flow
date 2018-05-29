@@ -22,18 +22,18 @@ yarn add "umm-projects/cafu_flow#^1.0.0"
 Implement IFlowPresenter on your Presenter
 
 ```csharp
-public class MyPresenter : IModelFlowPresenter<YourModel>
+public class MyPresenter : IModelFlowPresenter<MyModel>
 {
-    public class Factory : DefaultPresenterFactory<SoybeanScreeningPresenter>
+    public class Factory : DefaultPresenterFactory<MyPresenter>
     {
-        protected override void Initialize(SoybeanScreeningPresenter instance)
+        protected override void Initialize(MyPresenter instance)
         {
             base.Initialize(instance);
-            instance.ModelFlowUseCase = new ModelFlowUseCase<YourModel, YourEntity, YourEntityList, YourTranslator>.Factory().Create();
+            instance.ModelFlowUseCase = new ModelFlowUseCase<MyModel, MyEntity, MyEntityList, MyTranslator>.Factory().Create();
         }
     }
 
-    public IModelFlowUseCase<SoybeanModel> ModelFlowUseCase { get; private set; }
+    public IModelFlowUseCase<MyModel> ModelFlowUseCase { get; private set; }
 }
 ```
 
