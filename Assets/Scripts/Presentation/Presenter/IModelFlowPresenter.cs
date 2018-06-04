@@ -1,5 +1,5 @@
-﻿using CAFU.Flow.Domain.UseCase;
-using UniRx;
+﻿using System;
+using CAFU.Flow.Domain.UseCase;
 using IPresenter = CAFU.Core.Presentation.Presenter.IPresenter;
 
 namespace CAFU.Flow.Presentation.Presenter

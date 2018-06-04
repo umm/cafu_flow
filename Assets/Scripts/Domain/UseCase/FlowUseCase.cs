@@ -41,7 +41,7 @@ namespace CAFU.Flow.Domain.UseCase
         /// <summary>
         /// Flow of Ids.
         /// </summary>
-        UniRx.IObservable<int> IdFlowAsObservable { get; }
+        IObservable<int> IdFlowAsObservable { get; }
     }
 
     public class FlowUseCase : IFlowUseCase
@@ -55,7 +55,7 @@ namespace CAFU.Flow.Domain.UseCase
             }
         }
 
-        public UniRx.IObservable<int> IdFlowAsObservable => this.IdSubject;
+        public IObservable<int> IdFlowAsObservable => this.IdSubject;
 
         private IGenericRepository<FlowEntityList> GenericRepository { get; set; }
 
