@@ -28,7 +28,7 @@
     "@umm/cafu_generics": "umm-projects/cafu_generics#^1.0.0",
     "@umm/extra_collection": "umm-projects/extra_collection#^1.0.0",
     "@umm/scripts": "umm-projects/scripts#^1.0.0",
-    "@umm/unity_module_stopwatch": "umm-projects/unity_module_stopwatch#^1.0.0"
+    "@umm/stopwatch": "umm-projects/stopwatch#^1.0.0"
   },
   "devDependencies": {}
 }
