@@ -4,7 +4,9 @@
         "umm@cafu_core",
         "umm@cafu_generics",
         "umm@extra_collection",
-        "umm@stopwatch"
+        "umm@extra_linq",
+        "umm@stopwatch",
+        "umm@unirx"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
