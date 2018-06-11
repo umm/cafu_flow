@@ -54,7 +54,7 @@ namespace CAFU.Flow.Domain.UseCase {
 
         protected override void Initialize() {
             base.Initialize();
-            this.GenericRepository = new GenericRepository<TEntityList>();
+            this.GenericRepository = new GenericRepository<TEntityList>.Factory().Create();
             this.Translator = new TModelTranslator();
         }
 
