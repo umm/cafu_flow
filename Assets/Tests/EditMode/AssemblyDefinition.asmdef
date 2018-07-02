@@ -3,6 +3,7 @@
     "references": [
         "umm@cafu_flow",
         "umm@cafu_core",
+        "umm@cafu_generics",
         "umm@stopwatch",
         "umm@unirx",
         "umm@extra_unirx"
