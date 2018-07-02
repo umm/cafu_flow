@@ -7,6 +7,7 @@ namespace CAFU.Flow.Data.Entity
     [Serializable]
     public class FlowEntityList : ScriptableObjectGenericEntityList<FlowEntity>
     {
+        public string Key;
     }
 
     [Serializable]
