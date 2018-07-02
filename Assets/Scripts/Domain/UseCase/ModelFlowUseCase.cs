@@ -31,9 +31,9 @@ namespace CAFU.Flow.Domain.UseCase
 
         public IObservable<TModel> ModelFlowAsObservable =>
             this.IdFlowAsObservable
-                .Select(id => this.Id2MaltModelMap[id]);
+                .Select(id => this.Id2ModelMap[id]);
 
-        private IDictionary<int, TModel> Id2MaltModelMap { get; set; }
+        private IDictionary<int, TModel> Id2ModelMap { get; set; }
 
         private IGenericRepository<TEntityList> GenericRepository { get; set; }
 
@@ -43,7 +43,7 @@ namespace CAFU.Flow.Domain.UseCase
         {
             base.Load();
 
-            this.Id2MaltModelMap = this.GenericRepository.GetEntity().List
+            this.Id2ModelMap = this.GenericRepository.GetEntity().List
                 .Select(it => this.Translator.Translate(it))
                 .ToDictionary(it => it.PrimaryId);
         }
