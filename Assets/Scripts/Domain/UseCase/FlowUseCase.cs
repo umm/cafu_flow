@@ -23,23 +23,24 @@ namespace CAFU.Flow.Domain.UseCase
         }
 
         public IObservable<int> IdFlowAsObservable => this.IdSubject;
-
         private IGenericRepository<FlowEntityList> GenericRepository { get; set; }
-
         private FlowModelTranslator Translator { get; set; }
-
         protected IList<FlowModel> ModelList { get; set; }
-
         protected IStopWatch StopWatch { get; set; }
-
         private ISubject<int> IdSubject { get; set; } = new Subject<int>();
-
         private IDisposable Subscription { get; set; }
+
+        protected virtual void Initialize()
+        {
+            this.GenericRepository = new GenericRepository<FlowEntityList>.Factory().Create();
+            this.Translator = new FlowModelTranslator();
+            this.StopWatch = new StopWatch();
+        }
 
         public virtual void Load()
         {
             var entityList = this.GenericRepository.GetEntity();
-            this.ModelList = entityList.List.Select(it => this.Translator.Translate(it)).ToList();
+            this.ModelList = this.Translator.TranslateList(entityList).ToList();
         }
 
         public void Start()
@@ -78,13 +79,6 @@ namespace CAFU.Flow.Domain.UseCase
         public void Pause()
         {
             this.StopWatch.Pause();
-        }
-
-        protected virtual void Initialize()
-        {
-            this.GenericRepository = new GenericRepository<FlowEntityList>.Factory().Create();
-            this.Translator = new FlowModelTranslator();
-            this.StopWatch = new StopWatch();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using CAFU.Core.Domain.Translator;
 using CAFU.Flow.Data.Entity;
 using CAFU.Flow.Domain.Model;
@@ -20,6 +21,11 @@ namespace CAFU.Flow.Domain.Translator
                     entity.LotteryWeights.ToDictionary(it => it.Id, it => it.Weight)
                 )
             );
+        }
+
+        public IEnumerable<FlowModel> TranslateList(FlowEntityList list)
+        {
+            return list.List.Select(it => this.Translate(it));
         }
     }
 }
