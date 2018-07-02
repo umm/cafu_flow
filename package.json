@@ -30,7 +30,8 @@
     "@umm/extra_linq": "umm-projects/extra_linq#^1.0.0",
     "@umm/scripts": "umm-projects/scripts#^1.0.0",
     "@umm/stopwatch": "umm-projects/stopwatch#^1.0.0",
-    "@umm/unirx": "umm-projects/unirx#^2.0.0"
+    "@umm/unirx": "umm-projects/unirx#^2.0.0",
+    "@umm/unirx_observablelifecyclemonobehaviour": "umm-projects/unirx_observablelifecyclemonobehaviour#^1.0.0"
   },
   "devDependencies": {}
 }
