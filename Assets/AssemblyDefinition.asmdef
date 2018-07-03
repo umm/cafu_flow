@@ -6,7 +6,8 @@
         "umm@extra_collection",
         "umm@extra_linq",
         "umm@stopwatch",
-        "umm@unirx"
+        "umm@unirx",
+        "umm@unirx_observablelifecyclemonobehaviour"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
