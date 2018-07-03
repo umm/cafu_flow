@@ -52,8 +52,8 @@ namespace CAFU.Flow.Domain.UseCase
             foreach (var pair in pairs)
             {
                 this.ModelMap[pair.Key] = this.Translator.TranslateList(pair.Value).ToList();
-                this.StopWatchMap[pair.Key] = new StopWatch();
-                this.SubjectMap[pair.Key] = new Subject<int>();
+                this.StopWatchMap.GetOrSet(pair.Key, () => new StopWatch());
+                this.SubjectMap.GetOrSet(pair.Key, () => new Subject<int>());
             }
         }
 
@@ -83,7 +83,7 @@ namespace CAFU.Flow.Domain.UseCase
 
         public IObservable<int> GetIdFlowAsObservable(string key)
         {
-            return this.SubjectMap[key];
+            return this.SubjectMap.GetOrSet(key, () => new Subject<int>());
         }
 
         private void ModelGenerate(string key, IList<FlowModel> models, float time)
