@@ -14,7 +14,7 @@
 ## Install
 
 ```shell
-yarn add "umm-projects/cafu_flow#^1.0.0"
+yarn add "umm/cafu_flow#^1.0.0"
 ```
 
 ## Usage
